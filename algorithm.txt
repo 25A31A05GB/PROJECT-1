@@ -1,0 +1,48 @@
+Algorithm: Vehicle Parking System
+
+Start
+Declare structure Vehicle
+Begin infinite loop
+Display menu:
+Park Vehicle
+Display Vehicles
+Calculate Parking Charge
+Exit
+Read user choice
+If choice = 1 (Park Vehicle):
+Open file parking.dat in append mode
+If file fails → Display error and go to step 4
+Input vehicle number, type, and hours
+Write record into file using fwrite()
+Close file
+Display success message
+Go to step 4
+Else if choice = 2 (Display Vehicles):
+Open file parking.dat in read mode
+If file fails → Display “No records found” and go to step 4
+Read each record using fread()
+Display all vehicle details
+Close file
+Go to step 4
+Else if choice = 3 (Calculate Charge):
+Open file parking.dat in read mode
+If file fails → Display “No records found” and go to step 4
+Input vehicle number
+Read records one by one
+If match found:
+If type = Bike → charge = hours × 10
+If type = Car → charge = hours × 20
+If type = Truck → charge = hours × 30
+Display total charge
+Close file
+Go to step 4
+If no match found:
+Display “Vehicle not found”
+Close file
+Go to step 4
+Else if choice = 4:
+Exit program
+Else:
+Display “Invalid choice”
+Go to step 4
+Stop
